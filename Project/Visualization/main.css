@@ -1,0 +1,25 @@
+body {
+    font-family:"Lucida Grande","Droid Sans",Arial,Helvetica,sans-serif;
+}
+.legend {
+    border: 1px solid #555555;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 0.8em;
+    margin: 10px;
+    padding: 8px;
+}
+.bld {
+    font-weight: bold;
+}
+#last-statement-chart svg{
+    margin-left:10%;
+}
+#sentiment-donut-chart svg{
+    margin-left:30%;
+}
+rect {
+stroke-width: 2;
+}
+.padded{
+    padding: 10px;
+}

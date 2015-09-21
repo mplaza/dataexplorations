@@ -1,0 +1,42 @@
+Bureau of Justice Statistics,,,,,
+Filename: htus8008f40.csv,,,,,
+Report title: Homicide Trends in United States,,,,,
+Data source: Supplementary Homicide Report,,,,,
+Authors: Erica Smith and Alexia Cooper,,,,,
+Refer questions to: askbjs@usdoj.gov (202) 307-0765,,,,,
+Date of version: 11/16/11,,,,,
+,,,,,
+"Figure 40. Number of homicides by circumstance, 1980-2008",,,,,
+,,,,,
+,Number of victims,,,,
+Year,Felony,Argument,Gang,Other,Unknown
+1980,4070,10300,221,4963,3486
+1981,3883,9519,279,4835,4005
+1982,3721,8613,238,4322,4116
+1983,3480,8468,259,3058,4044
+1984,3381,8211,223,2708,4166
+1985,3388,8285,288,2691,4329
+1986,3992,8600,358,3016,4644
+1987,3935,8087,395,2679,5005
+1988,3933,7873,428,3010,5437
+1989,4593,8433,679,2709,5086
+1990,4868,8989,905,2868,5811
+1991,5283,8806,1192,3027,6393
+1992,5143,7951,993,3110,6563
+1993,4721,8309,1362,3403,6735
+1994,4299,7529,1339,3626,6536
+1995,3830,6753,1331,3451,6246
+1996,3690,6620,1091,2331,5918
+1997,3412,6103,999,1888,5807
+1998,2998,5845,833,2048,5245
+1999,2643,4993,838,2456,4594
+2000,2625,4990,846,2330,4796
+2001,2693,4839,1071,2246,5187
+2002,2654,4752,1119,2372,5305
+2003,2700,4974,1070,2172,5611
+2004,2390,4946,1026,2143,5643
+2005,2455,4801,952,2235,6296
+2006,2774,4655,1116,2563,5923
+2007,2501,4779,858,2572,6218
+2008,2411,4696,960,2442,5760
+"Note: Argument includes brawls due to the influence of narcotics or alcohol, disagreements about money or property, and other arguments. Felony types include homicides committed during a rape, robbery, burglary, theft, motor vehicle theft, arson, and violation of prostitution and commercial vice laws,  other sex offenses, narcotic drug laws, and gambling laws. Gang homicides include gangland killings and juvenile gang killings.",,,,,

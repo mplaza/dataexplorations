@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="d3.layout.cloud.js"></script>
+<head>
+    <title>Modern Era Death Row Executions: What do they have in common? Do they have things in common?? Let's find out!</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+
+<body>
+<div class = 'container-fluid'>
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+      <div class="row">
+        <h1 class="text-center">Modern Era Death Row Executions: What do they have in common? Do they have things in common?? Let's find out!</h1>
+      </div>
+      <div class="row">
+        <h3><a name="laststatements">Last Statements</a></h3>
+        <div class="panel panel-default">
+          <div class='panel-heading'> <h4>Word Cloud of last words </h4></div>
+          <div class="panel-body">
+            <div id="last-statement-chart"></div>
+          </div>
+          <div class='panel-footer'>*Last words were scraped from http://crime.about.com and the Texas Criminal Justice Website. Last statements were gathered for 405 people who were executed. English stopwords were excluded.</div>
+        </div>
+        <div class="panel panel-default">
+          <div class='panel-heading'> <h4>Sentiment</h4></div>
+          <div class="panel-body">
+            <div id="sentiment-donut-chart"></div>
+          </div>
+          <div class='padded'>Nothing was found to actually correlate or be able to predict sentiment. Also scoring may be particularly difficult for these types of statements, for example:
+          <br></br>
+          <p> First, I would like to say to the family that I am sorry, and I do ask for forgiveness. There will be also a funeral mass at St. Thomas and I would like to invite all of those from the State and the family to be there if they would like to come. My last words will be: And He was the light that shineth in the hearts of all man from the foundations of the world. If we confess our sins He is just and true to forgive us of our sins and cleanse us from all unrighteousness. Peace and goodness. *classified neg</p>
+          <br></br>
+          <p>I want to talk to my friends over here for a second. Well, it's good to see you guys. Look after Mary Lynn for me. Like I said, I've called my mother already, so she knows. Goodbye. *classified neg</p>
+          <br></br>
+          <p>First of all, I want to apologize to the family of Kelly Elizabeth Donovan. I am sorry for what I did to her twelve years ago. I wish they could forgive me for what I did. I am sorry. I am sorry for hurting my family, for hurting my friends. Jesus forgive me. Take me home with you. I am ready. I love you all.</p>
+          </div>
+
+          <div class='panel-footer'>*Trained on Michigan Sentiment Dataset with logicstic regression and applied to dataset.</div>
+        </div>
+      </div>
+      <div class="row">
+        <h3><a name="demographics">Demographics</a></h3>
+        <div class="panel panel-default">
+          <div class='panel-heading'> <h4>Race and Age </h4></div>
+            <div class="panel-body">
+              <img src='age_race.png' />
+            </div>
+            <div class='panel-footer'>*One-way ANOVA P = 1.92202541053e-10, significant different distribution in age with whites being older and latinos/ blacks being younger </div>
+        </div>
+        <div class="panel panel-default">
+          <div class='panel-heading'> <h4>Volunteering and Age </h4></div>
+            <div class="panel-body">
+              <img src='VolunteerAge.png' />
+            </div>
+            <div class='panel-footer'>*Older people tend to volunteer less, One-way ANOVA P = 0.0224976973518 </div>
+        </div>
+        <div class="panel panel-default">
+          <div class='panel-heading'> <h4>First Names?! </h4></div>
+            <div class="panel-body">
+              <div id="first-names-chart"></div>
+            </div>
+            <p>Names and the times more likely to be the name of executed person-- Larry: 2.01781944045, Willie: 3.00842281428, Johnny:3.85939086642, Bobby:2.67507149687, Billy:2.16211560786, Earl:3.36550554113, Jose:2.45503391114, Ricky:2.83909266782, Derrick:5.14952226758</p>
+            <br></br>
+            <p> Also scraped nicknames from http://www.censusdiggins.com/nicknames.htm and compared frequency of inmates having nicknames to overall frequency of nicknames in the population, but the difference (23% in executed v. 21% in population) were not significantly different.</p>
+            <br></br>
+            <div class='panel-footer'>*All were significant based on a chi-squared test, p < 0.05 with all except billy passing p < 0.02. Name distribution for the regular population were obtained from the SSA database, which has records of first names of persons with social security numbers. Names from 1918-1988 were used to be in line with the birth years of executed persons.</div>
+      </div>
+
+      <div class="row">
+        <h3><a name="laststatements">Compared to Homicides</a></h3>
+        <div class="panel panel-default">
+          <div class='panel-heading'> <h4>Distribution by Race </h4></div>
+          <div class="panel-body">
+          <form>
+            <label><input class='race' type="radio" name="dataset" value="apples" checked> Executed</label>
+            <label><input class='race' type="radio" name="dataset" value="oranges"> Not Executed</label>
+          </form>
+            <div id="race-donut"></div>
+          </div>
+          <div class='panel-footer'>*chi-sq p= 3.46453959106e-186, 1.5 X white_white executed, 3.1X black_white execued, 0.56X white_black executed, 0.28X black_black executed</div>
+        </div>
+        <div class="panel panel-default">
+          <div class='panel-heading'> <h4>Distribution by Race Over Time</h4></div>
+          <div class="panel-body">
+            <h5> Executed</h5>
+            <img src='rdt.png' />
+            <h5> Not Executed</h5>
+            <img src='rdtn.png' />
+          </div>
+          <div class='panel-footer'></div>
+        </div>
+        <div class="panel panel-default">
+        <div class='panel-heading'> <h4>Distribution by Sex </h4></div>
+          <div class="panel-body">
+          <form>
+            <label><input class='sex' type="radio" name="dataset" value="apples" checked> Executed</label>
+            <label><input class='sex' type="radio" name="dataset" value="oranges"> Not Executed</label>
+          </form>
+            <div id="sex-donut"></div>
+          </div>
+          <div class='panel-footer'>*chi-sq p= 2.33307964465e-129, 0.7 X m_m executed, 2.3X m_f execued, 0.09X female_male executed, 0.07X female_female executed</div>
+        </div>
+        <div class="panel panel-default">
+        <div class='panel-heading'> <h4>Relation to Homicides Per Year </h4></div>
+          <div class="panel-body">
+            <img src='het.png' />
+          </div>
+          <div class='panel-footer'>*PCC -0.69584306357469261, p = 2.7763542269542141e-05, strong negative correlation</div>
+          <div>strongest correlation seen for total X W_W *PCC -0.85743768503510331, 2.8391913437826599e-09</div>
+          <div>lesser correlation for B_B crime with only b_b executions being stat significant when broken down further</div>
+          <div>no significant correlation for interracial crime</div>
+          <h5>White_White executions and white_white homicide rates</h5>
+           <img src='ww_ww.png' />
+           <div class='panel-footer'>*total homicides scaled</div>
+        </div>
+        <div class="panel panel-default">
+        <div class='panel-heading'> <h4>Homicies, Unemployment, Executions </h4></div>
+          <div class="panel-body">
+            <img src='heu.png' />
+          </div>
+          <div class='panel-footer'>unemployment & homicides PCC 0.5164901707081212, 0.0041248510229396906, unemployment & executions PCC -0.75493437632211113, 2.2206216458739644e-06</div>
+        </div>
+        <div class="panel panel-default">
+        <div class='panel-heading'> <h4>Predictions? </h4></div>
+          <div class="panel-body">
+            <p>total_homicides ~ total_executions + unemployment_rate -- r^2 0.48</p>
+            <p>total_executions ~ total_homicides + unemployment_rate -- r^2 0.698</p>
+            <p>total_executions ~ T_White_Victims + unemployment_rate -- r^2 0.753</p>
+            <p>total_executions ~ White_White + unemployment_rate -- r^2 0.766</p>
+            <p>White_White ~ total_executions + unemployment_rate -- r^2 0.757</p>
+            <p>total_executions ~ next_year_W_W + unemployment_rate -- r^2 0.815</p>
+            <img src='predexec.png' />
+            <img src='modelpic1.png' width='500px' />
+            <p>next_year_W_W ~ total_executions + next_year_unemployment -- r^2 0.797</p>
+            <img src='predictww.png' />
+            <img src='modelpic2.png' width='500px' />
+            <div class='panel-footer'>cross-val score 0.6913</div>
+          </div>
+          <div class='panel-footer'>unemployment & homicides PCC 0.5164901707081212, 0.0041248510229396906, unemployment & executions PCC -0.75493437632211113, 2.2206216458739644e-06</div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+<script src="app.js"></script>
+
+
+
+</html>

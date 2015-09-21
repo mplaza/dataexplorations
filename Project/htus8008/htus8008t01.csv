@@ -1,0 +1,29 @@
+Bureau of Justice Statistics,,,,,,,,
+Filename: htus8008t01.csv,,,,,,,,
+Report title: Homicide Trends in United States,,,,,,,,
+Data source: Supplementary Homicide Report,,,,,,,,
+Authors: Erica Smith and Alexia Cooper,,,,,,,,
+Refer questions to: askbjs@usdoj.gov (202) 307-0765,,,,,,,,
+Date of version: 11/16/11,,,,,,,,
+,,,,,,,,
+"Table 1. Victims and Offenders by Demographic Group, 1980-2008",,,,,,,,
+,,Percent of -,,,,"Rate per 100,000",,
+,,,,,,population,,
+,,Victims,Offenders,Population,,Victims,,Offenders
+,Total,100.00%,100.00%,100.00%,,7.4,,8.3
+Age,,,,,,,,
+,Under 14,4.80%,0.50%,20.00%,,1.8,,0.2
+,14-17,5.20%,10.60%,5.80%,,6.6,,15
+,18-24,24.40%,37.50%,10.60%,,17.1,,29.3
+,25-34,28.70%,28.00%,15.60%,,13.7,,14.9
+,35-49,22.80%,17.10%,21.10%,,8,,6.7
+,50-64,8.90%,4.90%,14.70%,,4.5,,2.7
+,65+,5.10%,1.60%,12.30%,,3.1,,1.1
+Gender,,,,,,,,
+,Male,76.80%,89.50%,48.90%,,11.6,,15.1
+,Female,23.20%,10.50%,51.10%,,3.4,,1.7
+Race,,,,,,,,
+,White,50.30%,45.30%,82.90%,,4.5,,4.5
+,Black,47.40%,52.50%,12.60%,,27.8,,34.4
+,Other,2.30%,2.20%,4.40%,,3.8,,4.1
+"*Other race includes American Indians, Native Alaskans, Asians, Native Hawaiians, and other Pacific Islanders.",,,,,,,,
